@@ -1,0 +1,158 @@
+.country-list{
+    display: flex;
+    flex-direction: column;
+}
+.country-list .top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.country-list .top .search{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--White);
+    border-radius: 5px;
+    box-shadow:  0px 1px 5px 3px hsl(0deg 0% 52% / 10%);
+}
+.country-list .top .search i{
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    color: var(--Dark-Gray);
+}
+.country-list .top .search input{
+    width: 100%;
+    color: var(--Dark-Gray);
+    font-size: 0.9rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.country-list .top .filter{
+    width: 200px;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--White);
+    border-radius: 5px;
+    box-shadow:  0px 1px 5px 3px hsl(0deg 0% 52% / 10%);
+}
+.country-list .top .filter select{
+    width: 100%;
+    background-color: transparent;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
+.country-list .top .filter select option{
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+}
+
+.country-list .countries{
+    display: grid;
+    grid-template-columns: repeat(4,minmax(150px,1fr));
+    margin-top: 2.5rem;
+    gap: 4rem;
+}
+.country-list .countries .country-card{
+    background-color: var(--White);
+    border-radius: 5px;
+    box-shadow:  0px 1px 5px 3px hsl(0deg 0% 52% / 10%);
+    cursor: pointer;
+}
+.country-list .countries .country-card:hover{
+    box-shadow:  0px 1px 5px 3px hsl(0deg 0% 52% / 30%);
+    transition: all 0.3s;
+}
+.country-list .countries .country-card .image{
+    width: 100%;
+    height: 200px;
+}
+.country-list .countries .country-card .image img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.country-list .countries .country-card .info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.4rem 2rem;
+}
+.country-list .countries .country-card .info .name{
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--Light-Very-Dark-Blue);
+    margin-bottom: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.country-list .countries .country-card .info .info-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.country-list .countries .country-card .info .info-wrapper p{
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--Light-Very-Dark-Blue);
+}
+.country-list .countries .country-card .info .info-wrapper span{
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--Light-Very-Dark-Blue);
+    margin-left: 0.3rem;
+}
+@media (max-width:992px){
+    .country-list .countries{
+        grid-template-columns: repeat(3,minmax(200px,1fr));
+        gap: 3rem;
+    }
+}
+@media (max-width:768px){
+    .country-list .countries{
+        grid-template-columns: repeat(2,minmax(200px,1fr));
+        gap: 2rem;
+    }
+}
+@media (max-width:576px){
+    .country-list .countries{
+        grid-template-columns: repeat(1,minmax(200px,1fr));
+        gap: 3rem;
+    }
+}
+/* ///// Dark Mode //////////////// */
+.main.dark .country-list .top .search,
+.main.dark .country-list .top .filter,
+.main.dark .country-list .countries .country-card{
+  background-color: var(--Dark-Blue);
+  box-shadow: 0px 1px 5px 3px hsl(0deg 0% 7% / 22%);
+}
+.main.dark .country-list .top .filter select{
+    background-color: var(--Dark-Blue);
+}
+.main.dark .country-list .top .search input,
+.main.dark .country-list .top .search input::placeholder,
+.main.dark .country-list .top .search i,
+.main.dark .country-list .top .filter select{
+    color: var(--Text-Dark-Mode);
+}
+.main.dark .country-list .countries .country-card:hover{
+    box-shadow: 0px 1px 5px 3px hsl(0deg 0% 7% / 55%);
+}
+.main.dark .country-list .countries .country-card .info .name,
+.main.dark .country-list .countries .country-card .info .info-wrapper p{
+    color: var(--Text-Dark-Mode);
+}
+.main.dark .country-list .countries .country-card .info .info-wrapper span{
+    color: var(--Dark-Gray);
+}
